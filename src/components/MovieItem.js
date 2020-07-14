@@ -5,9 +5,6 @@ import { observer } from "mobx-react";
 import DeleteButton from "./buttons/DeleteButton";
 // import UpdateButton from "./buttons/UpdateButton";
 
-//Stores
-import movieStore from "../stores/movieStore";
-
 const MovieItem = ({ movie, deleteMovie }) => {
   return (
     <div>

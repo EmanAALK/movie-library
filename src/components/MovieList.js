@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react";
+import { BsPlusCircle } from "react-icons/bs";
 
 //Component
 import MovieItem from "./MovieItem";
@@ -7,18 +8,29 @@ import MovieItem from "./MovieItem";
 
 //Styles
 import { ListWrapper } from "../styles";
+import SearchBar from "../components/SearchBar";
 
 //Stores
 import movieStore from "../stores/movieStore";
 
 const MovieList = ({ deleteMovie }) => {
-  const movieList = movieStore.movies.map((movie) => (
-    <MovieItem deleteMovie={deleteMovie} movie={movie} key={movie.id} />
-  ));
+  const [query, setQuery] = useState("");
+
+  const movieList = movieStore.movies
+    .filter((movie) => movie.name.toLowerCase().includes(query.toLowerCase()))
+    .map((movie) => (
+      <MovieItem deleteMovie={deleteMovie} movie={movie} key={movie.id} />
+    ));
+
   return (
-    <ListWrapper>
-      <h4>{movieList}</h4>
-    </ListWrapper>
+    <>
+      <SearchBar setQuery={setQuery} />
+      <h1>to watch</h1>
+
+      <ListWrapper>
+        <h4>{movieList}</h4>
+      </ListWrapper>
+    </>
   );
 };
 

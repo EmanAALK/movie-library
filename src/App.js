@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MovieItem from "./components/MovieItem";
 import MovieList from "./components/MovieList";
 import DeleteButton from "./components/buttons/DeleteButton";
@@ -26,9 +26,17 @@ const theme = {
 function App() {
   return (
     <>
+      <ThemeProvider theme={theme} />
       <MovieList />
     </>
   );
 }
 
 export default App;
+
+{
+  /* <button>Add</button>
+      <input type="text" required>
+        Movie Name...
+      </input> */
+}
