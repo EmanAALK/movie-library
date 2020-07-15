@@ -5,7 +5,12 @@ import { SearchBarStyled } from "../styles";
 
 const SearchBar = (props) => {
   return (
-    <SearchBarStyled onChange={(event) => props.setQuery(event.target.value)} />
+    <>
+      <label>Search in your list..</label>
+      <SearchBarStyled
+        onChange={(event) => props.setQuery(event.target.value)}
+      />
+    </>
   );
 };
 

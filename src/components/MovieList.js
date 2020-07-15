@@ -4,7 +4,7 @@ import { BsPlusCircle } from "react-icons/bs";
 
 //Component
 import MovieItem from "./MovieItem";
-// import SearchBar from "./SearchBar";
+import AddMovieButton from "./buttons/AddMovieButton";
 
 //Styles
 import { ListWrapper } from "../styles";
@@ -13,8 +13,14 @@ import SearchBar from "../components/SearchBar";
 //Stores
 import movieStore from "../stores/movieStore";
 
-const MovieList = ({ deleteMovie }) => {
+const MovieList = ({ deleteMovie, addMovie }) => {
   const [query, setQuery] = useState("");
+
+  const [movie, setMovie] = useState("");
+
+  const handleChange = (event) => {
+    setMovie({ ...movie, [event.target.name]: event.target.value });
+  };
 
   const movieList = movieStore.movies
     .filter((movie) => movie.name.toLowerCase().includes(query.toLowerCase()))
@@ -26,7 +32,8 @@ const MovieList = ({ deleteMovie }) => {
     <>
       <SearchBar setQuery={setQuery} />
       <h1>to watch</h1>
-
+      <input type="text" required value={movie.name} onChange={handleChange} />
+      <AddMovieButton addMovie={addMovie} />
       <ListWrapper>
         <h4>{movieList}</h4>
       </ListWrapper>

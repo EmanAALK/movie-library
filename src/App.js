@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+//components
 import MovieItem from "./components/MovieItem";
 import MovieList from "./components/MovieList";
 import DeleteButton from "./components/buttons/DeleteButton";
@@ -33,10 +35,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <button>Add</button>
-      <input type="text" required>
-        Movie Name...
-      </input> */
-}

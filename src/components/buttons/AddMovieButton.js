@@ -1,6 +1,18 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
-// return()
+//store
+import movieStore from "../../stores/movieStore";
 
-// };
-// export AddMovieButton;
+//styles
+import { AddMovieStyled } from "../../styles";
+
+const AddMovieButton = ({ movieId }) => {
+  const handleAdd = () => movieStore.addMovie(movieId);
+
+  return (
+    <div>
+      <AddMovieStyled onClick={handleAdd}>Add Movie To watch</AddMovieStyled>
+    </div>
+  );
+};
+export default AddMovieButton;

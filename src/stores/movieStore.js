@@ -10,6 +10,10 @@ class MovieStore {
   deleteMovie = (movieId) => {
     this.movies = this.movies.filter((movie) => movie.id !== movieId);
   };
+
+  addMovie = (newMovie) => {
+    newMovie.id = this.movies.push(newMovie);
+  };
 }
 
 decorate(MovieStore, { movies: observable });
