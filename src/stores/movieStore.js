@@ -7,13 +7,20 @@ import movies from "../movies";
 class MovieStore {
   movies = movies;
 
+  addMovie = (movieName) => {
+    const movieObj = { name: movieName };
+    this.movies.push(movieObj);
+  };
+
   deleteMovie = (movieId) => {
     this.movies = this.movies.filter((movie) => movie.id !== movieId);
   };
 
-  addMovie = (movieName) => {
-    const movieObj = { name: movieName };
-    this.movies.push(movieObj);
+  transferMovie = (movie) => {
+    const watchedMovieObj = {};
+    this.movies.watched === true
+      ? (watchedMovieObj = this.movies.push(movie))
+      : (this.movies.watched = false);
   };
 }
 

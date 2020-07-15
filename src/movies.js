@@ -2,25 +2,25 @@ const movies = [
   {
     id: 1,
     name: "Mulan",
-    watched:
+    watched: false,
   },
 
   {
     id: 2,
     name: "Mulan 2",
-    watched:
+    watched: false,
   },
 
   {
     id: 3,
     name: "Home Alone",
-    watched:
+    watched: false,
   },
 
   {
     id: 4,
     name: "Baby's day out",
-    watched:
+    watched: false,
   },
 ];
 
