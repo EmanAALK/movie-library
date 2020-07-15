@@ -6,8 +6,8 @@ import movieStore from "../../stores/movieStore";
 //styles
 import { AddMovieStyled } from "../../styles";
 
-const AddMovieButton = ({ movieId }) => {
-  const handleAdd = () => movieStore.addMovie(movieId);
+const AddMovieButton = ({ movieName }) => {
+  const handleAdd = () => movieStore.addMovie(movieName);
 
   return (
     <div>

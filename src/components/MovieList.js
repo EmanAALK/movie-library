@@ -16,10 +16,10 @@ import movieStore from "../stores/movieStore";
 const MovieList = ({ deleteMovie, addMovie }) => {
   const [query, setQuery] = useState("");
 
-  const [movie, setMovie] = useState("");
+  const [movieName, setMovieName] = useState("");
 
   const handleChange = (event) => {
-    setMovie({ ...movie, [event.target.name]: event.target.value });
+    setMovieName(event.target.value);
   };
 
   const movieList = movieStore.movies
@@ -33,8 +33,8 @@ const MovieList = ({ deleteMovie, addMovie }) => {
       <h4>Search in your list ..</h4>
       <SearchBar setQuery={setQuery} />
       <h1>to watch</h1>
-      <input type="text" required value={movie.name} onChange={handleChange} />
-      <AddMovieButton addMovie={addMovie} />
+      <input type="text" required value={movieName} onChange={handleChange} />
+      <AddMovieButton movieName={movieName} />
       <ListWrapper>
         <h4>{movieList}</h4>
       </ListWrapper>

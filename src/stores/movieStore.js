@@ -11,8 +11,9 @@ class MovieStore {
     this.movies = this.movies.filter((movie) => movie.id !== movieId);
   };
 
-  addMovie = (newMovie) => {
-    newMovie.id = this.movies.push(newMovie);
+  addMovie = (movieName) => {
+    const movieObj = { name: movieName };
+    this.movies.push(movieObj);
   };
 }
 
