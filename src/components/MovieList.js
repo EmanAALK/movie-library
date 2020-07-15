@@ -30,6 +30,7 @@ const MovieList = ({ deleteMovie, addMovie }) => {
 
   return (
     <>
+      <h4>Search in your list ..</h4>
       <SearchBar setQuery={setQuery} />
       <h1>to watch</h1>
       <input type="text" required value={movie.name} onChange={handleChange} />
